@@ -37,8 +37,8 @@ export const NAV = [
 export const AREAS = ["Pali", "Jodhpur", "Jalore", "Sirohi", "Balotra"];
 
 export const INITIATIVE = {
-  title: "An initiative for Pali and the region, not a metro agency",
-  text: "I am not chasing big clients in Mumbai, Bengaluru or Delhi. I have worked for companies abroad and I know what good software looks like. I want businesses in Pali, Jodhpur and the surrounding towns to have the same standard, at a price that makes sense here. A shop, a factory, a clinic or a school here should be as easy to find online as any business in a metro. That is the point of JM Technologies. A business website goes live within one week.",
+  title: "An initiative for Pali and the region",
+  text: "I have worked for companies abroad and I know what good software looks like. I want businesses in Pali, Jodhpur and the surrounding towns to have the same standard, at a price that makes sense here. A shop, a factory, a clinic or a school here should be as easy to find online as any business in a metro. That is the point of JM Technologies. A business website goes live within one week.",
 };
 
 export const FAQ = [
@@ -262,14 +262,6 @@ export const PROJECTS = [
       "Migrated the existing infrastructure to the cloud and handled the Play Store release.",
     ],
     stack: ["Android", "Node.js", "AWS"],
-  },
-];
-
-export const TESTIMONIALS = [
-  {
-    name: "Rhythm",
-    role: "Founder, EarlyEarnly",
-    text: "The cloud transition was seamless and the support is top-notch. He also built our Android app, which was a great success.",
   },
 ];
 

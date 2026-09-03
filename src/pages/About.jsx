@@ -1,5 +1,6 @@
 import Seo from "../components/Seo";
-import { CtaBand, Eyebrow, H2, Section, Tags } from "../components/ui";
+import { CtaBand, Eyebrow, H2, Section } from "../components/ui";
+import * as si from "simple-icons";
 import { CONTACT, PRINCIPLES } from "../site";
 import ridamImg from "../assets/ridam-jain.webp";
 import dadajiImg from "../assets/jethmal-jain.webp";
@@ -22,20 +23,76 @@ const EXPERIENCE = [
     org: "Postree POS (Abmiro Solutions), Ireland",
     period: "2023 to 2024",
     text: "Point-of-sale software used daily by 160+ restaurants in Ireland and the EU. Integrated the Viva Payments terminal API end to end, made the slowest reports over 50% faster, built an offline voucher system and QR e-invoicing, and handled live production support by remoting into client machines.",
-  },
-  {
-    role: "Java Developer, part-time R&D",
-    org: "Langboot",
-    period: "2023",
-    text: "Built prompt-templating and pipeline modules for a LangChain-style library for Java and Spring, working async with an international team.",
-  },
-  {
-    role: "Internships",
-    org: "Cosaia and Novus Logics",
-    period: "2019",
-    text: "A hospital feedback Android app used by 1,000+ patients a day, and several single-page web apps with REST integrations.",
-  },
+  }
 ];
+
+// Brand logos from simple-icons. Names with no entry render as a plain tag.
+const LOGOS = {
+  JavaScript: si.siJavascript,
+  TypeScript: si.siTypescript,
+  Python: si.siPython,
+  PHP: si.siPhp,
+  "Node.js": si.siNodedotjs,
+  Express: si.siExpress,
+  "Spring Boot": si.siSpringboot,
+  FastAPI: si.siFastapi,
+  Prisma: si.siPrisma,
+  TypeORM: si.siTypeorm,
+  React: si.siReact,
+  "React Native": si.siReact,
+  "Android (Java, Kotlin)": si.siAndroid,
+  "Tailwind CSS": si.siTailwindcss,
+  Vite: si.siVite,
+  WordPress: si.siWordpress,
+  WooCommerce: si.siWoocommerce,
+  Shopify: si.siShopify,
+  Elementor: si.siElementor,
+  cPanel: si.siCpanel,
+  PostgreSQL: si.siPostgresql,
+  MySQL: si.siMysql,
+  MongoDB: si.siMongodb,
+  Redis: si.siRedis,
+  SQLite: si.siSqlite,
+  Cloudflare: si.siCloudflare,
+  DigitalOcean: si.siDigitalocean,
+  Render: si.siRender,
+  Docker: si.siDocker,
+  Linux: si.siLinux,
+  Firebase: si.siFirebase,
+  Gemini: si.siGooglegemini,
+  Claude: si.siClaude,
+  "Cloudflare Workers AI": si.siCloudflare,
+  LiveKit: { ...si.siLivekit, hex: "0F172A" }, // brand colour is white
+  Deepgram: si.siDeepgram,
+  Razorpay: si.siRazorpay,
+  "Viva Payments": si.siVivawallet,
+  PayPal: si.siPaypal,
+  "WhatsApp Cloud API": si.siWhatsapp,
+  "Google Calendar API": si.siGooglecalendar,
+};
+
+function TechTags({ items }) {
+  return (
+    <ul className="mt-4 flex flex-wrap gap-2">
+      {items.map((t) => {
+        const icon = LOGOS[t];
+        return (
+          <li
+            key={t}
+            className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-600"
+          >
+            {icon && (
+              <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true">
+                <path d={icon.path} fill={`#${icon.hex}`} />
+              </svg>
+            )}
+            {t}
+          </li>
+        );
+      })}
+    </ul>
+  );
+}
 
 const SKILLS = [
   ["Languages", ["JavaScript", "TypeScript", "Java", "Python", "PHP", "SQL"]],
@@ -49,10 +106,11 @@ const SKILLS = [
 ];
 
 const LIFE = [
-  ["1932", "Born on 1 February in Jalore, Rajasthan."],
+  ["1932", "Born on 1 February in Kalandri, Rajasthan. Adopted by a family in Jalore as a child."],
   ["Jalore", "Teacher and librarian in government schools, later headmaster. The town called him Jethmal Master."],
-  ["1965", "Moved to Pali and started a textile business."],
-  ["1995", "Stepped back from the business to part-time and gave most of his time to religious communities and organisations, working to strengthen them."],
+  ["1965", "Moved to Pali and started a textile business in Mahaveer Udhyog Nagar."],
+  ["Pali", "President of the Rajasthan Textile Association for many years. Helped the industry grow and spoke early about its effect on the environment."],
+  ["1995", "Stepped back to part-time and gave most of his time to religious communities and organisations."],
   ["2025", "Passed away on 16 June, aged 93."],
 ];
 
@@ -78,22 +136,20 @@ export default function About() {
           <p className="mt-2 text-lg text-slate-500">Software engineer. Founder, JM Technologies. {CONTACT.city}, India.</p>
           <div className="mt-6 space-y-4 text-lg leading-relaxed text-slate-700">
             <p>
-              I have spent three and a half years building software that businesses depend on every day. I ran
-              payments and production support for a restaurant network in Ireland, and I co-built a visa
-              platform from an empty repository to thousands of paying users, handling everything from the
-              database to the customer call when something broke.
+              I have spent over three years building software that businesses use every day. I handled payments
+              and live support for a restaurant network in Ireland, and I co-built a visa platform from nothing
+              to thousands of paying users. I looked after everything, from the database to the customer call
+              when something broke.
             </p>
             <p>
-              That background is why I work the way I do. I am not a designer who hands off to a developer, or a
-              developer who hands off to an ops team. I take the whole thing: the website, the store, the app, the
-              server it runs on, and the WhatsApp number customers message. When it is live, I stay on it.
+              That is why I work the way I do. I do not hand off to a designer, a developer or an ops team. I
+              take care of the whole thing: the website, the store, the app, the server it runs on and the
+              WhatsApp number your customers message. Once it is live, I stay on it.
             </p>
             <p>
-              I work from Pali, Rajasthan. I have supported Irish restaurants during their business hours for two
-              years, so distance and time zones are not a problem. But I am not trying to build a metro agency.
-              I want businesses in Pali, Jodhpur and the towns around us to have software as good as anything in
-              a big city, and to contribute something to where I am from. Think of JM Technologies as an
-              initiative for the region as much as a business.
+              I work from Pali, Rajasthan. I want businesses in Pali, Jodhpur and the towns around us to have
+              software as good as anything in a big city. JM Technologies is my way of growing the tech scene in
+              Pali and helping businesses here get the software they need to grow.
             </p>
           </div>
           <div className="mt-6 flex flex-wrap gap-5 text-sm font-medium">
@@ -153,7 +209,7 @@ export default function About() {
             {SKILLS.map(([label, items]) => (
               <div key={label}>
                 <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-500">{label}</h3>
-                <Tags items={items} />
+                <TechTags items={items} />
               </div>
             ))}
           </div>
@@ -167,27 +223,31 @@ export default function About() {
             <H2>Why JM: Jethmal Master</H2>
             <div className="mt-6 space-y-4 text-lg leading-relaxed text-slate-700">
               <p>
-                JM stands for Jethmal Master. My grandfather, Jethmal Jain, was born in Jalore, Rajasthan, in
-                1932. He served in government schools there as a teacher and a librarian and rose to headmaster.
-                Nobody in Jalore or Pali called him by his full name. To his students, their parents and the
-                generations after them, he was Jethmal Master.
+                JM stands for Jethmal Master. My grandfather, Jethmal Jain, was born in Kalandri, Rajasthan, in
+                1932 and adopted by a family in Jalore as a child. He was a teacher and librarian in Jalore and
+                rose to headmaster. Nobody called him by his full name. To his students, their parents and the generations after them, he was Jethmal Master.
               </p>
               <p>
-                In 1965 he moved to Pali and started a textile business, and ran it for thirty years. In 1995 he
-                stepped back to part-time and gave the rest of his life to religious communities and
-                organisations, working to bring them together and make them stronger. He did that with the same
-                patience he had brought to a classroom.
+                In 1965, in his thirties, he left teaching and moved to Pali to start a textile business in
+                Mahaveer Udhyog Nagar. He served as President of the Rajasthan Textile Association for many years
+                and did a lot to help the industry grow. Even then he thought ahead about the harm it could do to
+                the environment. In 1995 he stepped back to part-time and gave the rest of his life to religious
+                communities and organisations.
+              </p>
+              <p>
+                He was active, forward-thinking and welcoming to everyone. He talked to people of every generation
+                in his own style, and anyone who had a conversation with him remembered it. He held himself to
+                high standards, both in business and as a person.
               </p>
               <p>
                 To me he was a best friend. He was the person I could tell my secrets to. He played tricks on me
-                as a kid, played along with mine, and I do not remember him ever raising his voice at any of us.
-                He passed away on 16 June 2025, aged 93.
+                as a kid, and I do not remember him ever raising his voice at any of us. He passed away on
+                16 June 2025, aged 93.
               </p>
               <p>
-                When I started this company I wanted it to carry his name, because a name earned by teaching well
-                and being trusted for decades is worth continuing. It is also the standard I hold myself to: do
-                the work carefully, explain it plainly, and be someone people can rely on. That is what JM
-                Technologies is meant to be.
+                I wanted this company to carry his name. A name earned by working hard, helping others and being
+                trusted for decades is worth continuing. It is also the standard I hold myself to: do the best,
+                be the best, and be someone people can rely on.
               </p>
             </div>
             <ol className="mt-8 grid gap-4 sm:grid-cols-2">
@@ -208,7 +268,7 @@ export default function About() {
               className="w-64 md:w-full"
             />
             <figcaption className="mt-3 text-sm text-slate-500">
-              Jethmal Jain, 1 February 1932 to 16 June 2025. Headmaster in Jalore, businessman in Pali.
+              Jethmal Jain, 1 February 1932 to 16 June 2025. Headmaster in Jalore, Businessman in Pali.
             </figcaption>
           </figure>
         </div>

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Seo from "../components/Seo";
 import { ButtonLink, CtaBand, Eyebrow, H2, Lead, Section } from "../components/ui";
-import { AREAS, CONTACT, INITIATIVE, PRINCIPLES, PROJECTS, SERVICES, TESTIMONIALS } from "../site";
+import { AREAS, CONTACT, INITIATIVE, PRINCIPLES, PROJECTS, SERVICES } from "../site";
 import { POSTS, formatDate } from "../blog";
 import { ProjectCard } from "./Work";
 import ridamImg from "../assets/ridam-jain.webp";
@@ -104,14 +104,15 @@ export default function Home() {
             <Eyebrow>About</Eyebrow>
             <H2>Hi, I am Ridam Jain</H2>
             <p className="mt-4 text-lg leading-relaxed text-slate-600">
-              I am a software engineer from Pali, Rajasthan. I have spent the last few years running payments for a
-              restaurant network in Ireland, building a visa platform from nothing to thousands of users, and
-              shipping websites, stores and apps for small and mid-sized businesses.
+              I am a software engineer from Pali, Rajasthan. Over the last few years I have built products across
+              many industries. Most recently I built a visa platform from zero to thousands of users together with
+              Priyesh Sharma (kenu73 on X), and helped a startup grow its brand and set up its operations. I build
+              websites, mobile apps, online stores, cloud hosting and WhatsApp automation for small and mid-sized
+              businesses.
             </p>
             <p className="mt-4 text-lg leading-relaxed text-slate-600">
               JM Technologies is named after my grandfather, Jethmal Jain, a headmaster from Jalore who built a
-              textile business in Pali and was known to everyone as Jethmal Master. The name is a reminder to do
-              careful work that people can rely on.
+              textile business in Pali and was known to everyone as Jethmal Master.
             </p>
             <div className="mt-6">
               <ButtonLink to="/about" variant="secondary">
@@ -141,23 +142,10 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* Testimonial + local */}
+      {/* Local */}
       <div className="bg-white">
-        <Section className="grid gap-12 md:grid-cols-2">
-          <div>
-            <Eyebrow>Clients</Eyebrow>
-            <H2>What clients say</H2>
-            {TESTIMONIALS.map((t) => (
-              <blockquote key={t.name} className="mt-8 rounded-xl border border-slate-200 bg-sand p-6">
-                <p className="text-lg leading-relaxed text-slate-700">&ldquo;{t.text}&rdquo;</p>
-                <footer className="mt-4 text-sm">
-                  <span className="font-semibold">{t.name}</span>
-                  <span className="text-slate-500"> &middot; {t.role}</span>
-                </footer>
-              </blockquote>
-            ))}
-          </div>
-          <div>
+        <Section>
+          <div className="max-w-3xl">
             <Eyebrow>Local first</Eyebrow>
             <H2>{INITIATIVE.title}</H2>
             <p className="mt-6 text-lg leading-relaxed text-slate-600">{INITIATIVE.text}</p>
