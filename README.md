@@ -18,14 +18,32 @@ Open Graph and JSON-LD structured data are in `index.html`. When a page is added
 `public/sitemap.xml`. If the domain changes, update `SITE_URL` in `src/site.js` and the URLs in
 `index.html`, `public/robots.txt` and `public/sitemap.xml`.
 
+## Write a blog post
+
+Add a markdown file to `src/posts/`. The file name becomes the URL (`my-post.md` is `/blog/my-post`).
+Start it with:
+
+```
+---
+title: The title shown on the page and in Google
+description: One or two sentences. Used for the search snippet and the card.
+date: 2026-09-10
+---
+```
+
+Then write in plain markdown. Build and deploy; the post, sitemap entry and schema are generated.
+
+## How the build works
+
+`npm run build` runs Vite for the browser bundle, again for a server bundle, then `prerender.mjs`
+renders every route to a static HTML file (`build/about.html`, `build/blog/<slug>.html`, `404.html`) and
+writes `sitemap.xml`. Cloudflare Pages serves `about.html` at `/about`. Search engines and AI agents
+therefore get full content without JavaScript; React then hydrates for client-side navigation.
+
 ## Analytics
 
-Two options, pick one:
-
-1. **Cloudflare Web Analytics** (free, no cookies, no code). In the Cloudflare dashboard open
-   Workers & Pages, then the `jmtech` project, then Settings, then Metrics, and click Enable. Cloudflare
-   injects the script itself.
-2. **Google Analytics 4.** Paste the GA4 snippet from Google into `index.html` just before `</head>`.
+Cloudflare Web Analytics is wired in `index.html` (beacon script before `</body>`). View it in the
+Cloudflare dashboard under Analytics & Logs, then Web Analytics.
 
 ## Run
 
