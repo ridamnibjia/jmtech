@@ -29,7 +29,38 @@ export const NAV = [
   ["/services", "Services"],
   ["/work", "Work"],
   ["/about", "About"],
+  ["/blog", "Blog"],
   ["/contact", "Contact"],
+];
+
+// Towns where in-person meetings are easy. Everything else is remote.
+export const AREAS = ["Pali", "Jodhpur", "Jalore", "Sirohi", "Balotra"];
+
+export const FAQ = [
+  [
+    "Do you only work with businesses in Pali?",
+    "No. I am based in Pali and meet in person across Pali, Jodhpur, Jalore, Sirohi and Balotra. Most of my work is remote, including clients in Ireland and Europe, so location is not a limit.",
+  ],
+  [
+    "How much does a website or store cost?",
+    "I quote a fixed price after a free 30-minute call, based on the number of pages, whether you need to edit content yourself, and whether there is a catalogue, store or app involved. You get the scope and price in writing before any work starts.",
+  ],
+  [
+    "How long does it take?",
+    "A business website is usually a few weeks. An online store with payments, shipping and Cash on Delivery takes longer because every step is tested with real orders. Apps depend on scope, and I give a timeline with the quote.",
+  ],
+  [
+    "Can you fix a website or store someone else built?",
+    "Yes. Rescues are a large part of my work: stores losing orders at checkout, sites that never show up on Google, emails going missing. I audit first, then fix, and you get a written list of what changed.",
+  ],
+  [
+    "What happens after launch?",
+    "I stay on. Hosting, domain renewals, updates, bugs and small changes are covered by a monthly retainer or pay as you go. You also get plain-English documentation so you are never stuck.",
+  ],
+  [
+    "Do you help with Google listing, domain and business email?",
+    "Yes. Google Business Profile, Search Console, domain and DNS, and business email on Google Workspace or Zoho are part of getting a business online properly, and I set them up with the site.",
+  ],
 ];
 
 export const SERVICES = [
@@ -234,16 +265,6 @@ export const TESTIMONIALS = [
     name: "Rhythm",
     role: "Founder, EarlyEarnly",
     text: "The cloud transition was seamless and the support is top-notch. He also built our Android app, which was a great success.",
-  },
-  {
-    name: "Eli",
-    role: "CEO, Korkiland",
-    text: "Ridam transformed our online presence with a web and mobile app that just works. Highly recommended.",
-  },
-  {
-    name: "Faheem",
-    role: "Founder, DonaBees Shop",
-    text: "The AI integration boosted our efficiency and automated our workflow. A game changer for a small team.",
   },
 ];
 

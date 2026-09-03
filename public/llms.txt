@@ -1,0 +1,24 @@
+# JM Technologies
+
+> Software studio run by Ridam Jain in Pali, Rajasthan, India. Websites, Android and cross-platform apps, Shopify and WooCommerce stores, cloud hosting and deployment, AI applications, and official WhatsApp Business API automation. Serves Pali, Jodhpur, Jalore and nearby towns in person, and clients across India, Ireland and Europe remotely.
+
+Contact: work@ridamjain.com, +91 79762 41042 (phone and WhatsApp). Book a call: https://calendar.app.google/6efxcH454YBBknCz6
+Address: 23, Mahaveer Udhyog Nagar, Pali, Rajasthan 306401, India.
+Founder: Ridam Jain, software engineer, 3.5+ years in production systems (payments, e-commerce, Android, LLM features). LinkedIn: https://www.linkedin.com/in/ridam-jain-backend/ GitHub: https://github.com/ridamnibjia Portfolio: https://ridamjain.com
+
+The name JM stands for Jethmal Master, Ridam's grandfather Jethmal Jain (1932 to 2025), a headmaster from Jalore who later ran a textile business in Pali.
+
+## Pages
+
+- [Home](https://jm.ridamjain.com/): overview of services, recent work and how Ridam works.
+- [Services](https://jm.ridamjain.com/services): web development, app development, online stores, cloud and deployment, AI applications, WhatsApp and business automation, and the five-step project process.
+- [Work](https://jm.ridamjain.com/work): case studies. Avonplast (B2B manufacturer website, avonplast.in), Rajasthani Store (WooCommerce rescue, rajasthanistore.in), WhatsApp Campaign Manager (open source, https://github.com/ridamnibjia/meta-wa-campaign), Aashirwad and Just Lecture and EarlyEarnly (Android apps on Google Play).
+- [About](https://jm.ridamjain.com/about): Ridam's experience, technologies, working principles, and the story behind the name.
+- [Blog](https://jm.ridamjain.com/blog): practical guides for business owners on websites, Google listings and WhatsApp.
+- [Contact](https://jm.ridamjain.com/contact): booking link, WhatsApp, email, phone and frequently asked questions.
+
+## Machine-readable
+
+- Sitemap: https://jm.ridamjain.com/sitemap.xml
+- Structured data (schema.org LocalBusiness, Person, BlogPosting, FAQPage) is embedded as JSON-LD on every page.
+- All pages are pre-rendered static HTML; no JavaScript is needed to read the content.

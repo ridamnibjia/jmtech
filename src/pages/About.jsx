@@ -104,9 +104,6 @@ export default function About() {
             <a href={CONTACT.github} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
               GitHub
             </a>
-            <a href={CONTACT.portfolio} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
-              ridamjain.com
-            </a>
           </div>
         </div>
       </Section>

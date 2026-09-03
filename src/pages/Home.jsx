@@ -1,29 +1,23 @@
 import { Link } from "react-router-dom";
 import Seo from "../components/Seo";
 import { ButtonLink, CtaBand, Eyebrow, H2, Lead, Section } from "../components/ui";
-import { CONTACT, PRINCIPLES, PROJECTS, SERVICES, TESTIMONIALS } from "../site";
+import { AREAS, CONTACT, PRINCIPLES, PROJECTS, SERVICES, TESTIMONIALS } from "../site";
+import { POSTS, formatDate } from "../blog";
 import { ProjectCard } from "./Work";
 import ridamImg from "../assets/ridam-jain.webp";
 
 const FEATURED = ["avonplast", "rajasthani-store", "whatsapp-campaign-manager"];
-
-const STATS = [
-  ["3.5+", "years building production software"],
-  ["160+", "restaurants supported on one POS network"],
-  ["3,000+", "users on a platform built from zero"],
-  ["3", "countries with active clients"],
-];
 
 export default function Home() {
   return (
     <>
       <Seo
         title="Web, App, Cloud & AI Development in Pali, Rajasthan"
-        description="JM Technologies is run by Ridam Jain, a software engineer in Pali, Rajasthan. Websites, mobile apps, online stores, cloud hosting, WhatsApp automation and AI applications for businesses in India and worldwide."
+        description="JM Technologies is run by Ridam Jain, a software engineer in Pali, Rajasthan. Websites, mobile apps, online stores, cloud hosting, WhatsApp automation and AI applications for businesses in Pali, Jodhpur, across India and worldwide."
       />
 
       {/* Hero */}
-      <Section className="pb-10 pt-20 md:pb-16 md:pt-28">
+      <Section className="pb-16 pt-20 md:pb-24 md:pt-28">
         <Eyebrow>Software studio in Pali, Rajasthan. Clients worldwide.</Eyebrow>
         <h1 className="mt-4 max-w-3xl text-4xl font-semibold leading-tight tracking-tight md:text-6xl">
           Software built the way an owner would build it.
@@ -46,14 +40,6 @@ export default function Home() {
             or message on WhatsApp
           </a>
         </div>
-        <dl className="mt-16 grid grid-cols-2 gap-6 border-t border-slate-200 pt-8 md:grid-cols-4">
-          {STATS.map(([n, label]) => (
-            <div key={label}>
-              <dt className="text-3xl font-semibold tracking-tight">{n}</dt>
-              <dd className="mt-1 text-sm text-slate-600">{label}</dd>
-            </div>
-          ))}
-        </dl>
       </Section>
 
       {/* Services */}
@@ -150,15 +136,15 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* Testimonials */}
+      {/* Testimonial + local */}
       <div className="bg-white">
-        <Section>
-          <Eyebrow>Clients</Eyebrow>
-          <H2>What clients say</H2>
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <Section className="grid gap-12 md:grid-cols-2">
+          <div>
+            <Eyebrow>Clients</Eyebrow>
+            <H2>What clients say</H2>
             {TESTIMONIALS.map((t) => (
-              <blockquote key={t.name} className="rounded-xl border border-slate-200 bg-sand p-6">
-                <p className="leading-relaxed text-slate-700">&ldquo;{t.text}&rdquo;</p>
+              <blockquote key={t.name} className="mt-8 rounded-xl border border-slate-200 bg-sand p-6">
+                <p className="text-lg leading-relaxed text-slate-700">&ldquo;{t.text}&rdquo;</p>
                 <footer className="mt-4 text-sm">
                   <span className="font-semibold">{t.name}</span>
                   <span className="text-slate-500"> &middot; {t.role}</span>
@@ -166,8 +152,39 @@ export default function Home() {
               </blockquote>
             ))}
           </div>
+          <div>
+            <Eyebrow>Local first</Eyebrow>
+            <H2>In Pali, Jodhpur and nearby</H2>
+            <p className="mt-6 text-lg leading-relaxed text-slate-600">
+              I am based in Pali and happy to meet in person across {AREAS.join(", ")}. If your shop, factory,
+              clinic or school needs a website, an online store or a WhatsApp setup, we can sit down together and
+              plan it. Everyone else, I work with online, and have done for clients in Ireland and Europe for years.
+            </p>
+            <div className="mt-6">
+              <ButtonLink to="/contact" variant="secondary">
+                Get in touch
+              </ButtonLink>
+            </div>
+          </div>
         </Section>
       </div>
+
+      {/* Blog */}
+      <Section>
+        <Eyebrow>Blog</Eyebrow>
+        <H2>Notes for business owners</H2>
+        <ul className="mt-10 grid gap-6 md:grid-cols-3">
+          {POSTS.slice(0, 3).map((p) => (
+            <li key={p.slug}>
+              <Link to={`/blog/${p.slug}`} className="block h-full rounded-xl border border-slate-200 bg-white p-6 transition hover:border-ink">
+                <p className="text-xs text-slate-500">{formatDate(p.date)}</p>
+                <h3 className="mt-2 font-semibold">{p.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate-600">{p.description}</p>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </Section>
 
       <CtaBand />
     </>

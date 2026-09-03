@@ -2,3 +2,6 @@ User-agent: *
 Allow: /
 
 Sitemap: https://jm.ridamjain.com/sitemap.xml
+
+# Summary for AI agents and LLM crawlers
+# https://jm.ridamjain.com/llms.txt

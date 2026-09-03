@@ -11,3 +11,47 @@ html {
   outline: 2px solid #1e4fd8;
   outline-offset: 2px;
 }
+
+/* Blog post body (rendered from markdown) */
+.post {
+  @apply text-lg leading-relaxed text-slate-700;
+}
+.post h2 {
+  @apply mt-10 text-2xl font-semibold tracking-tight text-ink;
+}
+.post h3 {
+  @apply mt-8 text-xl font-semibold text-ink;
+}
+.post p,
+.post ul,
+.post ol {
+  @apply mt-4;
+}
+.post ul {
+  @apply list-disc pl-6;
+}
+.post ol {
+  @apply list-decimal pl-6;
+}
+.post li {
+  @apply mt-1;
+}
+.post a {
+  @apply text-accent underline;
+}
+.post strong {
+  @apply font-semibold text-ink;
+}
+.post blockquote {
+  @apply mt-4 border-l-2 border-slate-300 pl-4 text-slate-600;
+}
+.post table {
+  @apply mt-4 w-full text-base;
+}
+.post th,
+.post td {
+  @apply border-b border-slate-200 py-2 pr-4 text-left align-top;
+}
+.post code {
+  @apply rounded bg-slate-100 px-1 text-base;
+}
