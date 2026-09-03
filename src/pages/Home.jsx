@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Seo from "../components/Seo";
 import { ButtonLink, CtaBand, Eyebrow, H2, Lead, Section } from "../components/ui";
 import { CONTACT, PRINCIPLES, PROJECTS, SERVICES, TESTIMONIALS } from "../site";
+import { ProjectCard } from "./Work";
 import ridamImg from "../assets/ridam-jain.webp";
 
 const FEATURED = ["avonplast", "rajasthani-store", "whatsapp-campaign-manager"];
@@ -31,11 +32,19 @@ export default function Home() {
           I am Ridam Jain. I build websites, mobile apps, online stores and AI tools for businesses, set up the
           hosting they run on, and stay on after launch to keep them working.
         </p>
-        <div className="mt-8 flex flex-wrap gap-3">
-          <ButtonLink href={CONTACT.whatsapp}>Start a project</ButtonLink>
+        <div className="mt-8 flex flex-wrap items-center gap-3">
+          <ButtonLink href={CONTACT.booking}>Book a free call</ButtonLink>
           <ButtonLink to="/work" variant="secondary">
             See the work
           </ButtonLink>
+          <a
+            href={CONTACT.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-2 text-sm font-medium text-slate-600 hover:text-ink"
+          >
+            or message on WhatsApp
+          </a>
         </div>
         <dl className="mt-16 grid grid-cols-2 gap-6 border-t border-slate-200 pt-8 md:grid-cols-4">
           {STATS.map(([n, label]) => (
@@ -79,54 +88,26 @@ export default function Home() {
         <Eyebrow>Recent work</Eyebrow>
         <H2>Real businesses, real results</H2>
         <div className="mt-12 grid gap-8 md:grid-cols-3">
-          {FEATURED.map((slug) => {
-            const p = PROJECTS.find((x) => x.slug === slug);
-            return (
-              <article key={slug} className="flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white">
-                {p.image ? (
-                  <img
-                    src={p.image}
-                    alt={`${p.name} website homepage`}
-                    width="1280"
-                    height="800"
-                    loading="lazy"
-                    className="aspect-[16/10] w-full object-cover object-top"
-                  />
-                ) : (
-                  <div className="grid aspect-[16/10] place-items-center bg-accent-soft text-accent">
-                    <svg width="56" height="56" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                      <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.8.9c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.2-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.7-1.7c-.2-.5-.4-.4-.5-.4h-.5a1 1 0 0 0-.7.3 2.9 2.9 0 0 0-.9 2.2c0 1.3.9 2.5 1.1 2.7.1.2 1.9 2.9 4.6 4 1.7.7 2.3.8 3.1.7.5-.1 1.4-.6 1.6-1.2.2-.6.2-1.1.1-1.2l-.5-.3z" />
-                    </svg>
-                  </div>
-                )}
-                <div className="flex flex-1 flex-col p-6">
-                  <p className="text-xs font-medium uppercase tracking-wide text-slate-500">{p.kind}</p>
-                  <h3 className="mt-1 text-lg font-semibold">{p.name}</h3>
-                  <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-600">{p.summary}</p>
-                  <Link to={`/work#${p.slug}`} className="mt-4 text-sm font-medium text-accent hover:underline">
-                    Read the case study
-                  </Link>
-                </div>
-              </article>
-            );
-          })}
+          {FEATURED.map((slug) => (
+            <ProjectCard key={slug} p={PROJECTS.find((x) => x.slug === slug)} compact />
+          ))}
         </div>
         <div className="mt-10">
           <ButtonLink to="/work" variant="secondary">
-            All projects
+            All projects and case studies
           </ButtonLink>
         </div>
       </Section>
 
       {/* About teaser */}
       <div className="bg-white">
-        <Section className="grid items-center gap-12 md:grid-cols-[280px_1fr]">
+        <Section className="grid items-center gap-12 md:grid-cols-[300px_1fr]">
           <img
             src={ridamImg}
             alt="Ridam Jain, founder of JM Technologies"
-            width="460"
-            height="600"
-            className="w-56 rounded-xl object-cover md:w-full"
+            width="800"
+            height="1000"
+            className="w-64 rounded-2xl object-cover md:w-full"
           />
           <div>
             <Eyebrow>About</Eyebrow>
@@ -137,8 +118,9 @@ export default function Home() {
               shipping websites, stores and apps for small and mid-sized businesses.
             </p>
             <p className="mt-4 text-lg leading-relaxed text-slate-600">
-              JM Technologies is named after my grandfather, Jethmal Jain, a headmaster everyone in Pali knew as
-              Jethmal Master. The name is a reminder to do careful work that people can rely on.
+              JM Technologies is named after my grandfather, Jethmal Jain, a headmaster from Jalore who built a
+              textile business in Pali and was known to everyone as Jethmal Master. The name is a reminder to do
+              careful work that people can rely on.
             </p>
             <div className="mt-6">
               <ButtonLink to="/about" variant="secondary">

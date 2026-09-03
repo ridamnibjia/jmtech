@@ -3,35 +3,48 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      // The old jmtech.pages.dev address forwards to the real domain. Preview
+      // deployments (*.jmtech.pages.dev) are left alone.
+      if (location.hostname === "jmtech.pages.dev") {
+        location.replace("https://jm.ridamjain.com" + location.pathname + location.search + location.hash);
+      }
+    </script>
     <meta name="theme-color" content="#0F172A" />
     <title>JM Technologies | Web, App, Cloud & AI Development in Pali, Rajasthan</title>
     <meta
       name="description"
       content="JM Technologies is run by Ridam Jain, a software engineer in Pali, Rajasthan. Websites, mobile apps, online stores, cloud hosting, WhatsApp automation and AI applications for businesses in India and worldwide."
     />
-    <link rel="canonical" href="https://jmtech.pages.dev/" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/apple-touch-icon.png" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Ridam Jain" />
+    <meta name="geo.region" content="IN-RJ" />
+    <meta name="geo.placename" content="Pali, Rajasthan" />
+    <link rel="canonical" href="https://jm.ridamjain.com/" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
 
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_IN" />
     <meta property="og:site_name" content="JM Technologies" />
     <meta property="og:title" content="JM Technologies | Web, App, Cloud & AI Development in Pali, Rajasthan" />
     <meta
       property="og:description"
       content="Websites, mobile apps, online stores, cloud hosting, WhatsApp automation and AI applications by Ridam Jain."
     />
-    <meta property="og:url" content="https://jmtech.pages.dev/" />
-    <meta property="og:image" content="https://jmtech.pages.dev/og.png" />
+    <meta property="og:url" content="https://jm.ridamjain.com/" />
+    <meta property="og:image" content="https://jm.ridamjain.com/og.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="JM Technologies: websites, apps, online stores, cloud and AI for your business" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="JM Technologies | Web, App, Cloud & AI Development in Pali, Rajasthan" />
     <meta
       name="twitter:description"
       content="Websites, mobile apps, online stores, cloud hosting, WhatsApp automation and AI applications by Ridam Jain."
     />
-    <meta name="twitter:image" content="https://jmtech.pages.dev/og.png" />
+    <meta name="twitter:image" content="https://jm.ridamjain.com/og.png" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -45,15 +58,25 @@
         "@context": "https://schema.org",
         "@graph": [
           {
+            "@type": "WebSite",
+            "@id": "https://jm.ridamjain.com/#website",
+            "url": "https://jm.ridamjain.com/",
+            "name": "JM Technologies",
+            "publisher": { "@id": "https://jm.ridamjain.com/#business" },
+            "inLanguage": "en"
+          },
+          {
             "@type": "ProfessionalService",
-            "@id": "https://jmtech.pages.dev/#business",
+            "@id": "https://jm.ridamjain.com/#business",
             "name": "JM Technologies",
             "alternateName": "JM Tech",
-            "url": "https://jmtech.pages.dev/",
-            "email": "ridamnibjia786@gmail.com",
+            "url": "https://jm.ridamjain.com/",
+            "logo": "https://jm.ridamjain.com/apple-touch-icon.png",
+            "image": "https://jm.ridamjain.com/og.png",
+            "email": "work@ridamjain.com",
             "telephone": "+917976241042",
             "description": "Web development, app development, online stores, cloud hosting, WhatsApp automation and AI applications for businesses in India and worldwide.",
-            "founder": { "@id": "https://jmtech.pages.dev/#ridam" },
+            "founder": { "@id": "https://jm.ridamjain.com/#ridam" },
             "address": {
               "@type": "PostalAddress",
               "streetAddress": "23, Mahaveer Udhyog Nagar",
@@ -63,10 +86,11 @@
               "addressCountry": "IN"
             },
             "areaServed": "Worldwide",
+            "priceRange": "$$",
             "sameAs": [
-              "https://www.linkedin.com/in/ridam-jain-9b8b7817b/",
+              "https://www.linkedin.com/in/ridam-jain-backend/",
               "https://github.com/ridamnibjia",
-              "https://www.upwork.com/freelancers/~01cc7429f2aee545f2"
+              "https://ridamjain.com/"
             ],
             "hasOfferCatalog": {
               "@type": "OfferCatalog",
@@ -83,18 +107,20 @@
           },
           {
             "@type": "Person",
-            "@id": "https://jmtech.pages.dev/#ridam",
+            "@id": "https://jm.ridamjain.com/#ridam",
             "name": "Ridam Jain",
             "jobTitle": "Software Engineer and Founder",
-            "worksFor": { "@id": "https://jmtech.pages.dev/#business" },
-            "url": "https://jmtech.pages.dev/about",
-            "image": "https://jmtech.pages.dev/ridam-jain.jpg",
+            "worksFor": { "@id": "https://jm.ridamjain.com/#business" },
+            "url": "https://jm.ridamjain.com/about",
+            "image": "https://jm.ridamjain.com/ridam-jain.jpg",
+            "email": "work@ridamjain.com",
             "homeLocation": { "@type": "Place", "name": "Pali, Rajasthan, India" },
             "alumniOf": "GLS University",
             "knowsAbout": ["Web Development", "Android", "React", "Node.js", "Java", "Cloud Hosting", "AI Applications", "WhatsApp Cloud API", "Payments Integration"],
             "sameAs": [
-              "https://www.linkedin.com/in/ridam-jain-9b8b7817b/",
-              "https://github.com/ridamnibjia"
+              "https://www.linkedin.com/in/ridam-jain-backend/",
+              "https://github.com/ridamnibjia",
+              "https://ridamjain.com/"
             ]
           }
         ]
@@ -102,7 +128,8 @@
     </script>
   </head>
   <body>
-    <noscript>JM Technologies: web, app, cloud and AI development by Ridam Jain, Pali, Rajasthan. Email ridamnibjia786@gmail.com.</noscript>
+    <noscript>JM Technologies: web, app, cloud and AI development by Ridam Jain, Pali, Rajasthan. Email work@ridamjain.com.</noscript>
     <div id="root"></div>
+    <script type="module" src="/src/index.jsx"></script>
   </body>
 </html>

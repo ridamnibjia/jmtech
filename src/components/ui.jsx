@@ -33,7 +33,36 @@ export function Tags({ items }) {
   );
 }
 
-export function ButtonLink({ to, href, children, variant = "primary" }) {
+export function Bullets({ items, className = "" }) {
+  return (
+    <ul className={`space-y-2.5 ${className}`}>
+      {items.map((b) => (
+        <li key={b} className="flex gap-3 text-sm leading-relaxed text-slate-600">
+          <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true" />
+          <span>{b}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+export function ExternalLink({ href, children }) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center gap-1 text-sm font-medium text-accent hover:underline"
+    >
+      {children}
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+        <path d="M7 17L17 7M9 7h8v8" />
+      </svg>
+    </a>
+  );
+}
+
+export function ButtonLink({ to, href, children, variant = "primary", className = "" }) {
   const base = "inline-flex items-center justify-center rounded-md px-5 py-3 text-sm font-medium transition";
   const styles =
     variant === "primary"
@@ -41,12 +70,12 @@ export function ButtonLink({ to, href, children, variant = "primary" }) {
       : "border border-slate-300 bg-white text-ink hover:border-ink";
   if (href)
     return (
-      <a href={href} target="_blank" rel="noopener noreferrer" className={`${base} ${styles}`}>
+      <a href={href} target="_blank" rel="noopener noreferrer" className={`${base} ${styles} ${className}`}>
         {children}
       </a>
     );
   return (
-    <Link to={to} className={`${base} ${styles}`}>
+    <Link to={to} className={`${base} ${styles} ${className}`}>
       {children}
     </Link>
   );
@@ -59,24 +88,26 @@ export function CtaBand() {
         <div>
           <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">Have a project in mind?</h2>
           <p className="mt-2 max-w-xl text-slate-300">
-            Send a short message about what you need. I reply within a day with questions, a rough plan and a
-            fixed quote where possible.
+            Book a free 30-minute call, or send a short message about what you need. I reply within a day with
+            questions, a rough plan and a fixed quote where possible.
           </p>
         </div>
         <div className="flex flex-wrap gap-3">
           <a
-            href={CONTACT.whatsapp}
+            href={CONTACT.booking}
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-md bg-white px-5 py-3 text-sm font-medium text-ink hover:bg-slate-100"
           >
-            Message on WhatsApp
+            Book a call
           </a>
           <a
-            href={`mailto:${CONTACT.email}`}
+            href={CONTACT.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
             className="rounded-md border border-slate-500 px-5 py-3 text-sm font-medium text-white hover:border-white"
           >
-            Email me
+            WhatsApp
           </a>
         </div>
       </div>

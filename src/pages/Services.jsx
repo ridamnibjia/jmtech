@@ -1,9 +1,9 @@
 import Seo from "../components/Seo";
-import { CtaBand, Eyebrow, H2, Lead, Section, Tags } from "../components/ui";
+import { Bullets, CtaBand, Eyebrow, H2, Lead, Section, Tags } from "../components/ui";
 import { SERVICES } from "../site";
 
 const PROCESS = [
-  ["Call", "A 30-minute conversation about your business, what the software must do, and what you already have."],
+  ["Call", "A free 30-minute conversation about your business, what the software must do, and what you already have."],
   ["Scope and quote", "A written scope with a fixed price where the work is clear, or a day rate where it is not. No surprises later."],
   ["Build in the open", "You get a staging link from the first week and see progress as it happens, not at the end."],
   ["Launch and handover", "Deployment, DNS, analytics, and a plain-English document explaining how everything works."],
@@ -36,14 +36,7 @@ export default function Services() {
             </div>
             <div>
               <p className="leading-relaxed text-slate-700">{s.body}</p>
-              <ul className="mt-6 space-y-3">
-                {s.bullets.map((b) => (
-                  <li key={b} className="flex gap-3 text-slate-700">
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true" />
-                    <span>{b}</span>
-                  </li>
-                ))}
-              </ul>
+              <Bullets items={s.bullets} className="mt-6" />
             </div>
           </section>
         ))}

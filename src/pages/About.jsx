@@ -48,20 +48,28 @@ const SKILLS = [
   ["Payments and integrations", ["Razorpay", "Cashfree", "Viva Payments", "PayPal", "WhatsApp Cloud API", "Google Calendar API"]],
 ];
 
+const LIFE = [
+  ["1932", "Born on 1 February in Jalore, Rajasthan."],
+  ["Jalore", "Teacher and librarian in government schools, later headmaster. The town called him Jethmal Master."],
+  ["1965", "Moved to Pali and started a textile business."],
+  ["1995", "Stepped back from the business to part-time and gave most of his time to religious communities and organisations, working to strengthen them."],
+  ["2025", "Passed away on 16 June, aged 93."],
+];
+
 export default function About() {
   return (
     <>
       <Seo
         title="About Ridam Jain and the JM Technologies Name"
-        description="Ridam Jain is a software engineer from Pali, Rajasthan with 3.5+ years building production systems: payments, e-commerce, Android apps and AI features. JM Technologies is named after his grandfather Jethmal Jain, a headmaster in Pali."
+        description="Ridam Jain is a software engineer from Pali, Rajasthan with 3.5+ years building production systems: payments, e-commerce, Android apps and AI features. JM Technologies is named after his grandfather Jethmal Jain, known as Jethmal Master."
       />
 
-      <Section className="grid items-start gap-12 md:grid-cols-[300px_1fr]">
+      <Section className="grid items-start gap-12 md:grid-cols-[320px_1fr]">
         <img
           src={ridamImg}
           alt="Ridam Jain, software engineer and founder of JM Technologies"
-          width="460"
-          height="600"
+          width="800"
+          height="1000"
           className="w-64 rounded-2xl object-cover md:w-full"
         />
         <div>
@@ -87,14 +95,17 @@ export default function About() {
             </p>
           </div>
           <div className="mt-6 flex flex-wrap gap-5 text-sm font-medium">
+            <a href={CONTACT.booking} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
+              Book a call
+            </a>
             <a href={CONTACT.linkedin} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
               LinkedIn
             </a>
             <a href={CONTACT.github} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
               GitHub
             </a>
-            <a href={CONTACT.upwork} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
-              Upwork
+            <a href={CONTACT.portfolio} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
+              ridamjain.com
             </a>
           </div>
         </div>
@@ -150,34 +161,58 @@ export default function About() {
         </Section>
       </div>
 
-      <Section id="the-name" className="grid items-center gap-12 md:grid-cols-[1fr_320px]">
-        <div>
-          <Eyebrow>The name</Eyebrow>
-          <H2>Why JM</H2>
-          <div className="mt-6 space-y-4 text-lg leading-relaxed text-slate-700">
-            <p>
-              JM stands for Jethmal Master. My grandfather, Jethmal Jain, was a headmaster in Pali. In our
-              city nobody called him by his full name. He was simply Jethmal Master, to his students, their
-              parents and the generations that followed.
-            </p>
-            <p>
-              He is no longer with us. When I started this company I wanted it to carry his name, because a name
-              earned by teaching well and being trusted for decades is worth continuing. It is also a standard
-              to hold myself to: do the work carefully, explain it plainly, and be someone people can rely on.
-            </p>
-            <p>That is what JM Technologies is meant to be.</p>
+      <Section id="the-name">
+        <div className="grid items-start gap-12 md:grid-cols-[1fr_340px]">
+          <div>
+            <Eyebrow>The name</Eyebrow>
+            <H2>Why JM: Jethmal Master</H2>
+            <div className="mt-6 space-y-4 text-lg leading-relaxed text-slate-700">
+              <p>
+                JM stands for Jethmal Master. My grandfather, Jethmal Jain, was born in Jalore, Rajasthan, in
+                1932. He served in government schools there as a teacher and a librarian and rose to headmaster.
+                Nobody in Jalore or Pali called him by his full name. To his students, their parents and the
+                generations after them, he was Jethmal Master.
+              </p>
+              <p>
+                In 1965 he moved to Pali and started a textile business, and ran it for thirty years. In 1995 he
+                stepped back to part-time and gave the rest of his life to religious communities and
+                organisations, working to bring them together and make them stronger. He did that with the same
+                patience he had brought to a classroom.
+              </p>
+              <p>
+                To me he was a best friend. He was the person I could tell my secrets to. He played tricks on me
+                as a kid, played along with mine, and I do not remember him ever raising his voice at any of us.
+                He passed away on 16 June 2025, aged 93.
+              </p>
+              <p>
+                When I started this company I wanted it to carry his name, because a name earned by teaching well
+                and being trusted for decades is worth continuing. It is also the standard I hold myself to: do
+                the work carefully, explain it plainly, and be someone people can rely on. That is what JM
+                Technologies is meant to be.
+              </p>
+            </div>
+            <ol className="mt-8 grid gap-4 sm:grid-cols-2">
+              {LIFE.map(([when, what]) => (
+                <li key={when} className="rounded-xl border border-slate-200 bg-white p-4">
+                  <p className="text-sm font-semibold text-accent">{when}</p>
+                  <p className="mt-1 text-sm leading-relaxed text-slate-600">{what}</p>
+                </li>
+              ))}
+            </ol>
           </div>
+          <figure className="md:sticky md:top-24">
+            <img
+              src={dadajiImg}
+              alt="Jethmal Jain, known as Jethmal Master, headmaster and grandfather of Ridam Jain"
+              width="700"
+              height="1050"
+              className="w-64 md:w-full"
+            />
+            <figcaption className="mt-3 text-sm text-slate-500">
+              Jethmal Jain, 1 February 1932 to 16 June 2025. Headmaster in Jalore, businessman in Pali.
+            </figcaption>
+          </figure>
         </div>
-        <figure>
-          <img
-            src={dadajiImg}
-            alt="Jethmal Jain, known in Pali as Jethmal Master, headmaster and grandfather of Ridam Jain"
-            width="640"
-            height="960"
-            className="w-64 rounded-2xl object-cover md:w-full"
-          />
-          <figcaption className="mt-3 text-sm text-slate-500">Jethmal Jain, headmaster. Pali, Rajasthan.</figcaption>
-        </figure>
       </Section>
 
       <CtaBand />

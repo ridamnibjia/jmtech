@@ -36,12 +36,12 @@ function Nav() {
             </NavLink>
           ))}
           <a
-            href={CONTACT.whatsapp}
+            href={CONTACT.booking}
             target="_blank"
             rel="noopener noreferrer"
             className="ml-3 rounded-md bg-ink px-4 py-2 text-sm font-medium text-white hover:bg-slate-800"
           >
-            Start a project
+            Book a call
           </a>
         </nav>
         <button
@@ -65,12 +65,12 @@ function Nav() {
             </NavLink>
           ))}
           <a
-            href={CONTACT.whatsapp}
+            href={CONTACT.booking}
             target="_blank"
             rel="noopener noreferrer"
             className="mt-2 block rounded-md bg-ink px-4 py-2 text-center text-sm font-medium text-white"
           >
-            Start a project
+            Book a call
           </a>
         </nav>
       )}
@@ -116,21 +116,21 @@ function Footer() {
             </li>
             <li>{CONTACT.address}</li>
             <li className="flex gap-4 pt-1">
+              <a href={CONTACT.booking} target="_blank" rel="noopener noreferrer" className="hover:text-ink">
+                Book a call
+              </a>
               <a href={CONTACT.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-ink">
                 LinkedIn
               </a>
               <a href={CONTACT.github} target="_blank" rel="noopener noreferrer" className="hover:text-ink">
                 GitHub
               </a>
-              <a href={CONTACT.upwork} target="_blank" rel="noopener noreferrer" className="hover:text-ink">
-                Upwork
-              </a>
             </li>
           </ul>
         </div>
       </div>
       <div className="border-t border-slate-200 py-5 text-center text-xs text-slate-500">
-        &copy; {new Date().getFullYear()} {BRAND}. Named after Jethmal Jain, headmaster of Pali.
+        &copy; {new Date().getFullYear()} {BRAND}. Named after Jethmal Jain, known as Jethmal Master.
       </div>
     </footer>
   );

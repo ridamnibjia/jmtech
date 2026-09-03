@@ -1,22 +1,27 @@
 // Single place for every fact shown on the site. Edit here, not in the pages.
 import avonplastImg from "./assets/avonplast.webp";
 import rajasthaniImg from "./assets/rajasthani-store.webp";
+import whatsappImg from "./assets/whatsapp-campaign.webp";
+import justLectureImg from "./assets/just-lecture.webp";
+import aashirwadImg from "./assets/aashirwad.webp";
+import earlyEarnlyImg from "./assets/early-earnly.webp";
 
-export const SITE_URL = "https://jmtech.pages.dev";
+export const SITE_URL = "https://jm.ridamjain.com";
 export const BRAND = "JM Technologies";
 export const OWNER = "Ridam Jain";
 
 export const CONTACT = {
-  email: "ridamnibjia786@gmail.com",
+  email: "work@ridamjain.com",
   phone: "+91 79762 41042",
   phoneRaw: "+917976241042",
   whatsapp:
     "https://wa.me/917976241042?text=Hi%20Ridam%2C%20I%20want%20to%20talk%20about%20a%20project.",
+  booking: "https://calendar.app.google/6efxcH454YBBknCz6",
   address: "23, Mahaveer Udhyog Nagar, Pali, Rajasthan 306401, India",
   city: "Pali, Rajasthan",
-  linkedin: "https://www.linkedin.com/in/ridam-jain-9b8b7817b/",
+  linkedin: "https://www.linkedin.com/in/ridam-jain-backend/",
   github: "https://github.com/ridamnibjia",
-  upwork: "https://www.upwork.com/freelancers/~01cc7429f2aee545f2",
+  portfolio: "https://ridamjain.com",
 };
 
 export const NAV = [
@@ -47,7 +52,7 @@ export const SERVICES = [
     title: "App Development",
     short: "Native Android and cross-platform apps, published and maintained on the Play Store.",
     body:
-      "From a working prototype to a listing on Google Play. I have shipped apps for rentals, rewards, study tools and jewellery shops, and I handle the store listing, releases and crash fixes after launch.",
+      "From a working prototype to a listing on Google Play. I have shipped apps for rewards, study tools and jewellery shops, and I handle the store listing, releases and crash fixes after launch.",
     bullets: [
       "Native Android in Java and Kotlin, or React Native when one codebase makes sense",
       "Offline-first data, sign-in, push notifications, PDF and WhatsApp sharing",
@@ -122,6 +127,7 @@ export const PROJECTS = [
     year: "2026",
     url: "https://avonplast.in",
     image: avonplastImg,
+    imageAlt: "Avonplast website homepage with product hero and navigation",
     summary:
       "Full rebuild of the website for Avonplast PVC (Bangalore) Pvt. Ltd., a maker of PVC conduit pipes, fittings and wires since 1965.",
     details: [
@@ -140,6 +146,7 @@ export const PROJECTS = [
     year: "2026",
     url: "https://rajasthanistore.in",
     image: rajasthaniImg,
+    imageAlt: "Rajasthani Store homepage with camel illustration banner",
     summary:
       "A WooCommerce store selling Rajasthani snacks and sweets that was losing more than half its orders at checkout.",
     details: [
@@ -157,6 +164,8 @@ export const PROJECTS = [
     kind: "Open source tool",
     year: "2026",
     repo: "https://github.com/ridamnibjia/meta-wa-campaign",
+    image: whatsappImg,
+    imageAlt: "Illustration of the WhatsApp Campaign Manager dashboard with a running campaign and delivery status",
     summary:
       "A self-hosted bulk messaging and inbox tool on Meta's official WhatsApp Cloud API. Free and open source.",
     details: [
@@ -169,17 +178,21 @@ export const PROJECTS = [
     stack: ["Node.js", "Express", "Socket.io", "SQLite", "React", "Meta Cloud API", "Docker"],
   },
   {
-    slug: "korkiland",
-    name: "Korkiland Scooter Rentals",
-    kind: "Web and mobile app",
-    year: "2024",
+    slug: "aashirwad",
+    name: "Aashirwad - Jewellery Estimation App",
+    kind: "Android app on Google Play",
+    year: "2025",
+    url: "https://play.google.com/store/apps/details?id=com.ridamnibjia.aashirwad",
+    image: aashirwadImg,
+    imageAlt: "Aashirwad app welcome screen: estimates in seconds, and it's free",
     summary:
-      "A scooter rental app with digital rental agreements, e-signature and per-ride time tracking.",
+      "A gold and silver jewellery estimate app built for the shop counter. Free on the Play Store.",
     details: [
-      "Customer app for booking and signing agreements, plus an operator view for fleet and ride status.",
-      "Backend on Node.js with a React front end, deployed on Cloudflare.",
+      "Calculates metal value at the day's rate, wastage, making charges, stones and tax, then deducts exchanged jewellery and advances.",
+      "Exports the estimate as a PDF or image and sends it over WhatsApp in one tap.",
+      "Native Android in Java with Room storing estimates and customers on the device, so it works offline.",
     ],
-    stack: ["React", "Node.js", "Cloudflare"],
+    stack: ["Android", "Java", "Room", "SQLite", "Firebase Auth"],
   },
   {
     slug: "just-lecture",
@@ -187,27 +200,16 @@ export const PROJECTS = [
     kind: "Android app on Google Play",
     year: "2025",
     url: "https://play.google.com/store/apps/details?id=com.ridamnibjia.studious",
+    image: justLectureImg,
+    imageAlt: "Just Lecture player with chapters panel",
     summary:
       "A distraction-free study app that curates short lectures into clean, ad-free playlists.",
     details: [
+      "No recommendations, no comments, no algorithm pulling students off track. Browse by search and category, sign in, and focus.",
       "Native Android in Java with a TypeScript API on PostgreSQL and Prisma for playlists and sign-in.",
       "Published and maintained on the Play Store.",
     ],
     stack: ["Android", "Java", "TypeScript", "PostgreSQL", "Prisma"],
-  },
-  {
-    slug: "aashirwad",
-    name: "Aashirwad",
-    kind: "Android app on Google Play",
-    year: "2025",
-    url: "https://play.google.com/store/apps/details?id=com.ridamnibjia.aashirwad",
-    summary:
-      "A gold and silver jewellery estimate app built for the shop counter.",
-    details: [
-      "Calculates metal value, wastage, making charges, stones and tax, deducts exchanged jewellery and advances, and exports the estimate as PDF or image to WhatsApp.",
-      "Native Android in Java with Room storing estimates and customers on the device.",
-    ],
-    stack: ["Android", "Java", "Room", "Firebase Auth"],
   },
   {
     slug: "early-earnly",
@@ -215,23 +217,24 @@ export const PROJECTS = [
     kind: "Android app on Google Play",
     year: "2024",
     url: "https://play.google.com/store/apps/details?id=com.earlyearnly.earlyearnlyapp",
+    image: earlyEarnlyImg,
+    imageAlt: "EarlyEarnly listing on Google Play",
     summary:
-      "A native Android app that lets users earn rewards by playing simple games and completing tasks.",
-    details: ["Native Android with a Node.js backend and a cloud migration of the existing infrastructure."],
+      "A native Android app that lets users earn cash rewards by playing simple games and completing tasks.",
+    details: [
+      "Native Android app with a Node.js backend for tasks, rewards and payouts.",
+      "Migrated the existing infrastructure to the cloud and handled the Play Store release.",
+    ],
     stack: ["Android", "Node.js", "AWS"],
-  },
-  {
-    slug: "donabees",
-    name: "DonaBees Shop",
-    kind: "Shopify store",
-    year: "2024",
-    summary: "Shopify store setup with AI-assisted product content for a small retail brand.",
-    details: ["Theme setup, product catalogue, payments and AI integrations for product descriptions."],
-    stack: ["Shopify", "OpenAI"],
   },
 ];
 
 export const TESTIMONIALS = [
+  {
+    name: "Rhythm",
+    role: "Founder, EarlyEarnly",
+    text: "The cloud transition was seamless and the support is top-notch. He also built our Android app, which was a great success.",
+  },
   {
     name: "Eli",
     role: "CEO, Korkiland",
@@ -241,11 +244,6 @@ export const TESTIMONIALS = [
     name: "Faheem",
     role: "Founder, DonaBees Shop",
     text: "The AI integration boosted our efficiency and automated our workflow. A game changer for a small team.",
-  },
-  {
-    name: "Rhythm",
-    role: "Founder, EarlyEarnly",
-    text: "The cloud transition was seamless and the support is top-notch. He also built our Android app, which was a great success.",
   },
 ];
 

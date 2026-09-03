@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import { SITE_URL, BRAND } from "../site";
 
 // Sets per-page title, description, canonical and Open Graph tags on the
-// existing <head> elements from public/index.html.
+// existing <head> elements from index.html.
 export default function Seo({ title, description }) {
   const { pathname } = useLocation();
   useEffect(() => {
