@@ -89,9 +89,11 @@ export default function About() {
               server it runs on, and the WhatsApp number customers message. When it is live, I stay on it.
             </p>
             <p>
-              I work from Pali, Rajasthan, and my clients are in India, Ireland and across Europe. Time zones
-              have never been a problem. I have supported Irish restaurants during their business hours for two
-              years.
+              I work from Pali, Rajasthan. I have supported Irish restaurants during their business hours for two
+              years, so distance and time zones are not a problem. But I am not trying to build a metro agency.
+              I want businesses in Pali, Jodhpur and the towns around us to have software as good as anything in
+              a big city, and to contribute something to where I am from. Think of JM Technologies as an
+              initiative for the region as much as a business.
             </p>
           </div>
           <div className="mt-6 flex flex-wrap gap-5 text-sm font-medium">

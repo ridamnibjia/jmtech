@@ -5,7 +5,7 @@ import { takeMeta } from "./components/Seo";
 import { POSTS } from "./blog";
 
 // Every URL that gets its own static HTML file at build time.
-export const routes = ["/", "/services", "/work", "/about", "/contact", "/blog", ...POSTS.map((p) => `/blog/${p.slug}`)];
+export const routes = ["/", "/hi", "/services", "/work", "/about", "/contact", "/blog", ...POSTS.map((p) => `/blog/${p.slug}`)];
 
 export function render(url) {
   const html = renderToString(

@@ -5,7 +5,7 @@ import { SERVICES } from "../site";
 const PROCESS = [
   ["Call", "A free 30-minute conversation about your business, what the software must do, and what you already have."],
   ["Scope and quote", "A written scope with a fixed price where the work is clear, or a day rate where it is not. No surprises later."],
-  ["Build in the open", "You get a staging link from the first week and see progress as it happens, not at the end."],
+  ["Build in the open", "You get a staging link within days and see progress as it happens, not at the end. A business website is live within one week."],
   ["Launch and handover", "Deployment, DNS, analytics, and a plain-English document explaining how everything works."],
   ["Support", "Bugs, updates and small changes after launch. Monthly retainer or pay as you go."],
 ];

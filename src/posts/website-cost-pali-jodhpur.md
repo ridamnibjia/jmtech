@@ -25,7 +25,7 @@ Most owners I meet in Pali and Jodhpur have already been quoted for a website at
 
 ## A fair way to price it
 
-I quote a fixed price after a 30-minute call, based on the number of pages, whether you need an admin panel to edit content yourself, whether there is a product catalogue or a store, and how much writing and image work is involved. A simple business site is usually a few weeks of work. A store with payments, shipping and Cash on Delivery takes longer because every one of those has to be tested with real orders before you spend on ads.
+I quote a fixed price after a 30-minute call, based on the number of pages, whether you need an admin panel to edit content yourself, whether there is a product catalogue or a store, and how much writing and image work is involved. A business site goes live within one week. A store with payments, shipping and Cash on Delivery takes longer because every one of those has to be tested with real orders before you spend on ads.
 
 Whatever you decide, ask for three things in writing: the list of pages, who owns the domain (it should be you), and what happens after launch.
 

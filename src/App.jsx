@@ -6,6 +6,7 @@ import Work from "./pages/Work";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Blog, { BlogPost } from "./pages/Blog";
+import Hindi from "./pages/Hindi";
 import NotFound from "./pages/NotFound";
 
 export default function App() {
@@ -13,6 +14,7 @@ export default function App() {
     <Routes>
       <Route element={<Layout />}>
         <Route index element={<Home />} />
+        <Route path="hi" element={<Hindi />} />
         <Route path="services" element={<Services />} />
         <Route path="work" element={<Work />} />
         <Route path="about" element={<About />} />

@@ -24,6 +24,16 @@ function Nav() {
     `block rounded-md px-3 py-2 text-sm font-medium transition ${
       isActive ? "text-ink" : "text-slate-600 hover:text-ink"
     }`;
+  const hindi = pathname === "/hi";
+  const langLink = (
+    <Link
+      to={hindi ? "/" : "/hi"}
+      lang={hindi ? "en" : "hi"}
+      className="block rounded-md px-3 py-2 text-sm font-medium text-slate-600 hover:text-ink"
+    >
+      {hindi ? "English" : "हिन्दी"}
+    </Link>
+  );
 
   return (
     <header className="sticky top-0 z-40 border-b border-slate-200/70 bg-white/90 backdrop-blur">
@@ -35,6 +45,7 @@ function Nav() {
               {label}
             </NavLink>
           ))}
+          {langLink}
           <a
             href={CONTACT.booking}
             target="_blank"
@@ -64,6 +75,7 @@ function Nav() {
               {label}
             </NavLink>
           ))}
+          {langLink}
           <a
             href={CONTACT.booking}
             target="_blank"

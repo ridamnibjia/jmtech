@@ -30,6 +30,13 @@ function page(route) {
         .replace(/(<meta property="og:image" content=")[^"]*(")/, `$1${meta.image}$2`)
         .replace(/(<meta name="twitter:image" content=")[^"]*(")/, `$1${meta.image}$2`);
     }
+    if (meta.lang && meta.lang !== "en") out = out.replace('<html lang="en">', `<html lang="${meta.lang}">`);
+    if (meta.alternates.length) {
+      const links = meta.alternates
+        .map((a) => `    <link rel="alternate" hreflang="${a.hreflang}" href="${a.href}" />`)
+        .join("\n");
+      out = out.replace("</head>", `${links}\n  </head>`);
+    }
   }
   return out;
 }

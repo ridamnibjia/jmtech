@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Seo from "../components/Seo";
 import { ButtonLink, CtaBand, Eyebrow, H2, Lead, Section } from "../components/ui";
-import { AREAS, CONTACT, PRINCIPLES, PROJECTS, SERVICES, TESTIMONIALS } from "../site";
+import { AREAS, CONTACT, INITIATIVE, PRINCIPLES, PROJECTS, SERVICES, TESTIMONIALS } from "../site";
 import { POSTS, formatDate } from "../blog";
 import { ProjectCard } from "./Work";
 import ridamImg from "../assets/ridam-jain.webp";
@@ -14,6 +14,11 @@ export default function Home() {
       <Seo
         title="Web, App, Cloud & AI Development in Pali, Rajasthan"
         description="JM Technologies is run by Ridam Jain, a software engineer in Pali, Rajasthan. Websites, mobile apps, online stores, cloud hosting, WhatsApp automation and AI applications for businesses in Pali, Jodhpur, across India and worldwide."
+        alternates={[
+          { hreflang: "en", href: "/" },
+          { hreflang: "hi", href: "/hi" },
+          { hreflang: "x-default", href: "/" },
+        ]}
       />
 
       {/* Hero */}
@@ -154,11 +159,10 @@ export default function Home() {
           </div>
           <div>
             <Eyebrow>Local first</Eyebrow>
-            <H2>In Pali, Jodhpur and nearby</H2>
-            <p className="mt-6 text-lg leading-relaxed text-slate-600">
-              I am based in Pali and happy to meet in person across {AREAS.join(", ")}. If your shop, factory,
-              clinic or school needs a website, an online store or a WhatsApp setup, we can sit down together and
-              plan it. Everyone else, I work with online, and have done for clients in Ireland and Europe for years.
+            <H2>{INITIATIVE.title}</H2>
+            <p className="mt-6 text-lg leading-relaxed text-slate-600">{INITIATIVE.text}</p>
+            <p className="mt-4 text-lg leading-relaxed text-slate-600">
+              I meet in person across {AREAS.join(", ")}. Everyone else, I work with online.
             </p>
             <div className="mt-6">
               <ButtonLink to="/contact" variant="secondary">

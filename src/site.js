@@ -36,6 +36,11 @@ export const NAV = [
 // Towns where in-person meetings are easy. Everything else is remote.
 export const AREAS = ["Pali", "Jodhpur", "Jalore", "Sirohi", "Balotra"];
 
+export const INITIATIVE = {
+  title: "An initiative for Pali and the region, not a metro agency",
+  text: "I am not chasing big clients in Mumbai, Bengaluru or Delhi. I have worked for companies abroad and I know what good software looks like. I want businesses in Pali, Jodhpur and the surrounding towns to have the same standard, at a price that makes sense here. A shop, a factory, a clinic or a school here should be as easy to find online as any business in a metro. That is the point of JM Technologies. A business website goes live within one week.",
+};
+
 export const FAQ = [
   [
     "Do you only work with businesses in Pali?",
@@ -47,7 +52,7 @@ export const FAQ = [
   ],
   [
     "How long does it take?",
-    "A business website is usually a few weeks. An online store with payments, shipping and Cash on Delivery takes longer because every step is tested with real orders. Apps depend on scope, and I give a timeline with the quote.",
+    "A business website takes one week at most, from the call to going live. An online store with payments, shipping and Cash on Delivery takes longer because every step is tested with real orders. Apps depend on scope, and I give a timeline with the quote.",
   ],
   [
     "Can you fix a website or store someone else built?",
